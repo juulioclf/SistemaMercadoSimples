@@ -1,8 +1,9 @@
-import MyFunctions as mf
+import functions as fc
 
 
 email = "gabrielepenalber@gmail.com"
-email1 = "julio.com.br"
+email1 = "julio.@com.br"
 
-print(mf.emailController(email))
-print(mf.emailController(email1))
+print(fc.emailController(email))
+print(fc.emailController(email1))
+print(email1.find("."))

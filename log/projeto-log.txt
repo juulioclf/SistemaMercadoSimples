@@ -1,6 +1,7 @@
-1: tela inicial de login:
+1: tela de login:
     - login 
     - cadastrar usuario
+    - verificar se o usuario coloca uma opcao valida
 
     1.1: login:
         - admin (admin@email.com/admin@123)
