@@ -1,0 +1,26 @@
+1: tela inicial de login:
+    - login 
+    - cadastrar usuario
+
+    1.1: login:
+        - admin (admin@email.com/admin@123)
+        - usuario
+
+    1.2: cadastrar usuario:
+        -nome
+        -email
+        -senha
+
+2: menu:
+    2.1 menu de usuario:
+        -verificar produtos
+        -pesquisar produtos
+        -adicionar no carrinho
+        
+    
+
+    2.2 menu de admin:
+        -adicionar produtos
+        -adicionar promocao
+        -
+
