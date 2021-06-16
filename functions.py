@@ -18,15 +18,20 @@ def menuInicial():
     print("2- Cadastrar um usuario")
 
 
-def menuLogin():
+def menuLogin(email, senha):
+    pass
     
-    print("esse eh o menu login")
 
-def menuCadastro():
+def menuCadastro(email, senha):
     
-    print("esse eh o menu cadastro")
+    file = open('archives/users.txt', 'w')
+    if(emailController(email)):
+        file.write(email)
+        file.write(senha)
+    else:
+        print("email invalido")
 
-
+    file.close()
 
 
 
