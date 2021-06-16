@@ -17,11 +17,3 @@ elif(acaoDesejada == 2):
     functions.limparTela()
     functions.menuCadastro()
 
-
-else:
-    print("por favor, digite um numero valido")
-    functions.limparTela()
-    functions.menuInicial()
-    acaoDesejada = int(input("Digite a opcao desejada: "))
-
-

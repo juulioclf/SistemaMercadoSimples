@@ -1,4 +1,5 @@
 import os
+import classes 
 
 def emailController(email):
 
@@ -16,6 +17,7 @@ def menuInicial():
     print("1- Login")
     print("2- Cadastrar um usuario")
 
+
 def menuLogin():
     
     print("esse eh o menu login")
@@ -23,6 +25,8 @@ def menuLogin():
 def menuCadastro():
     
     print("esse eh o menu cadastro")
+
+
 
 
 

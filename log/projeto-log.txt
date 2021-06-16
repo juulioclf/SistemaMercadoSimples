@@ -1,11 +1,12 @@
 1: tela de login:
-    - login 
-    - cadastrar usuario
-    - verificar se o usuario coloca uma opcao valida
+    - (implementada) login 
+    - (implementada) cadastrar usuario
+    - (nao implementada) verificar se o usuario coloca uma opcao valida
 
     1.1: login:
         - admin (admin@email.com/admin@123)
         - usuario
+        - usar um arquivo para salvar os usuarios, diferentes arquivos para admin e usuario.
 
     1.2: cadastrar usuario:
         -nome

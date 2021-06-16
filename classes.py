@@ -1,9 +1,10 @@
 
 class Usuario():
-    def __init__(self, nome, email, senha):
+    def __init__(self, nome, email, senha, tipo):
         self.nome = nome
         self.email = email
         self.senha = senha
+        self.senha = tipo
 
 class Produto():
     def __init__(self, codigo, nome, tipo, preco):
