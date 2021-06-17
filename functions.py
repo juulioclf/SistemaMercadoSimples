@@ -25,6 +25,7 @@ def menuLogin(email, senha):
 def menuCadastro(email, senha):
     
     file = open('archives/users.txt', 'w')
+    
     if(emailController(email)):
         file.write(email)
         file.write(senha)
