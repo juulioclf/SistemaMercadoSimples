@@ -1,6 +1,6 @@
 1: tela de login:
     - (implementada) login 
-    - (implementada) cadastrar usuario
+    - (ERRO: nao consegui ler os arquivos de texto criado) cadastrar usuario
     - (nao implementada) verificar se o usuario coloca uma opcao valida
 
     1.1: login:

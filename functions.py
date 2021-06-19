@@ -34,5 +34,16 @@ def menuCadastro(email, senha):
 
     file.close()
 
+def criarUsuario(obj):
+    dictUsuario = dict(
+        nome = obj.nome,
+        email = obj.email,
+        senha = obj.senha,
+        tipo = obj.tipo
+        )
+
+    return dictUsuario
+
+        
 
 

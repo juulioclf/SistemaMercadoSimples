@@ -1,14 +1,33 @@
+import classes
+import functions
+from archives import users
 import json
 
-def escrever_json(dados):
-    with open("archives/users.txt", "a") as file:   
-        file.write(",")
-        json.dump(dados, file)
-        file.close()
+"""
+so preciso dar o append na lista que esta em usuarios, 
+mas como vou pegar o (pessoaLista) de usuarios??
 
-email = str(input("digite o seu email: "))
-senha = str(input("digite a sua senha: "))
 
-dictjson = {"email": email, "senha": senha}
 
-escrever_json(dictjson)
+julio = classes.Usuario("juli323o", "j@gmail.com", "123", "1")
+dicPessoa = functions.criarUsuario(julio)
+with open('archives/users.txt', "a") as f:
+    f.write(str(dicPessoa) + ", ")
+
+
+
+with open('archives/users.py', 'r') as f:
+    arquivo = f.read()
+    print(arquivo.split(",\n"))
+
+"""
+
+
+
+with open('archives/users.py', 'r') as f:
+    arquivo = f.read()
+
+    for elemento in arquivo:
+        
+    
+

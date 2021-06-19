@@ -4,7 +4,7 @@ class Usuario():
         self.nome = nome
         self.email = email
         self.senha = senha
-        self.senha = tipo
+        self.tipo = tipo
 
 class Produto():
     def __init__(self, codigo, nome, tipo, preco):
