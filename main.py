@@ -1,19 +1,22 @@
-import functions
-
-acaoDesejada = 0
-functions.limparTela()
-functions.menuInicial()
-acaoDesejada = int(input("Digite a opcao desejada: "))
+from helper import functions 
+from time import sleep
 
 
-if(acaoDesejada == 1):
-    print("opcao desejada: Login")
+acao = 11
+while( acao != 0):
+
     functions.limparTela()
-    functions.menuLogin()
+    functions.menuInicial()
+    acao = int(input("digite a acao desejada: "))
 
+    if(acao == 1):
+        print("indo para o login de admin..")
+        functions.loginAdmin()
 
-elif(acaoDesejada == 2):
-    print("opcao desejada: Cadastro de Usuario")
-    functions.limparTela()
-    functions.menuCadastro()
+    elif(acao == 2):
+        print("entrando como usuario..")
+
+    else:
+        print("por favor, digite um numero valido!")
+        sleep(2)
 

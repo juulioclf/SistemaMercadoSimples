@@ -5,8 +5,8 @@
 
     1.1: login:
         - admin (admin@email.com/admin@123)
-        - usuario
-        - usar um arquivo para salvar os usuarios, diferentes arquivos para admin e usuario.
+        - (ao nao ser admin, ele ja entra como usuario)usuario
+        - (nao implementada)usar um arquivo para salvar os usuarios, diferentes arquivos para admin e usuario.
 
     1.2: cadastrar usuario:
         -nome
