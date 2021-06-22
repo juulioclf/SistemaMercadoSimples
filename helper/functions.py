@@ -7,10 +7,11 @@ def limparTela():
 
 def menuInicial():
 
+    limparTela()
     print("Seja bem-vindo ao sistema de mercado\n")
     print("1- Login como admin")
     print("2- Entar como user")
-    print("0- Sair do sistema")
+    print("3- Sair do sistema")
 
 def telaAdminLogado():
 
@@ -18,12 +19,12 @@ def telaAdminLogado():
     print("Digite o que voce deseja fazer")
     print("1- Adicionar item")
     print("2- Remover item")
-    print("0- Adicionar promocao")
+    print("3- Adicionar promocao")
     acaoAdmin = int(input("Digite o que deseja fazer: "))
 
 
 def verificaEmailAdmin(email, senha):
-    admin = [["@dm1n01"], ["m3rc4d0"]]
+
     if((email == "@dm1n01") and (senha == "m3rc4d0")):
         return True
     else:
@@ -43,10 +44,28 @@ def loginAdmin():
         telaAdminLogado()
         print("apos o tela admin")
 
+
     else:
+        limparTela()
         print("email ou senha informados estão incorretos!")
+        sleep(2)
+        acaoLogin = str(input("voce deseja sair? (sim/nao) ")).lower()
+        
+        if(acaoLogin == "sim"):
+            print("voce esta sendo redirecionado para o menu inicial")
+            sleep(2)
+            menuInicial()
+        elif(acaoLogin == "nao"):
+            loginAdmin()
+    
+        else:
+            print("por favor, digite uma entrada valida")
+            sleep (2)
 
 
+
+    
+        
         
 
 

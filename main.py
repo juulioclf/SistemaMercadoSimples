@@ -3,7 +3,7 @@ from time import sleep
 
 
 acao = 11
-while( acao != 0):
+while( acao != 3):
 
     functions.limparTela()
     functions.menuInicial()
@@ -16,6 +16,11 @@ while( acao != 0):
 
     elif(acao == 2):
         print("entrando como usuario..")
+
+    elif(acao == 3):
+        functions.limparTela()
+        print("saindo do sistema...")
+        sleep(2)
 
     else:
         print("por favor, digite um numero valido!")
