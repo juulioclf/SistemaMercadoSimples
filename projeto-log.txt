@@ -8,10 +8,12 @@
         - (ao nao ser admin, ele ja entra como usuario)usuario
         - (nao implementada)usar um arquivo para salvar os usuarios, diferentes arquivos para admin e usuario.
 
-    1.2: (nao implementada)cadastrar usuario:
+    ~1.2: (nao implementada)cadastrar usuario:
         -nome
         -email
-        -senha
+        -senha~
+
+log: implementada toda a doc
 
 2: menu:
     2.1 menu de usuario:

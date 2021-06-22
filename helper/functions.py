@@ -21,6 +21,22 @@ def telaAdminLogado():
     print("2- Remover item")
     print("3- Adicionar promocao")
     acaoAdmin = int(input("Digite o que deseja fazer: "))
+    
+    if (acaoAdmin == 1):
+        print("voce esta adicionando itens")
+        sleep(2)
+
+    elif (acaoAdmin == 2):
+        print("voce esta removendo itens")
+        sleep(2)
+    
+    elif(acaoAdmin == 3):
+        print("voce esta adicionando uma promocao")
+        sleep(2)
+
+    else:
+        print("digite um numero valido")
+        sleep(2)
 
 
 def verificaEmailAdmin(email, senha):
@@ -42,8 +58,6 @@ def loginAdmin():
         print("email e senha corretos!")
         sleep(2)
         telaAdminLogado()
-        print("apos o tela admin")
-
 
     else:
         limparTela()
@@ -61,6 +75,8 @@ def loginAdmin():
         else:
             print("por favor, digite uma entrada valida")
             sleep (2)
+
+
 
 
 
