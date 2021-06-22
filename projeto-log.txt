@@ -8,7 +8,7 @@
         - (ao nao ser admin, ele ja entra como usuario)usuario
         - (nao implementada)usar um arquivo para salvar os usuarios, diferentes arquivos para admin e usuario.
 
-    1.2: cadastrar usuario:
+    1.2: (nao implementada)cadastrar usuario:
         -nome
         -email
         -senha
@@ -22,7 +22,7 @@
     
 
     2.2 menu de admin:
-        -adicionar produtos
+        -adicionar/remover produtos produtos
         -adicionar promocao
         -
 

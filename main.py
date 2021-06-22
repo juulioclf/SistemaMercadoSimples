@@ -11,6 +11,7 @@ while( acao != 0):
 
     if(acao == 1):
         print("indo para o login de admin..")
+        sleep(2)
         functions.loginAdmin()
 
     elif(acao == 2):
