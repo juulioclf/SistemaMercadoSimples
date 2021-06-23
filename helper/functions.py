@@ -5,7 +5,9 @@ from models import classes
 global produtoVetor
 produtoVetor = []
 
+
 def limparTela():
+
     os.system("CLS")
 
 
@@ -16,6 +18,7 @@ def menuInicial():
     print("1- Login como admin")
     print("2- Entar como user")
     print("3- Sair do sistema")
+
 
 def produtoJaExiste(produto):
 
@@ -52,13 +55,18 @@ def addProdutoAdmin():
 
         telaAdminLogado() if (acao == "SAIR") else addProdutoAdmin()
 
+
 def popItemAdmin():
+
     print()
 
 def addPromocaoAdmin():
+
     print()
 
+
 def mostrarProdutos():
+
     print(produtoVetor)
     str(input("pressione ENTER para sair: "))   
 
@@ -113,8 +121,8 @@ def verificaEmailAdmin(email, senha):
 
     
 def loginAdmin():
-    limparTela()
 
+    limparTela()
     print("por favor, digite o email e a senha:")
     email = str(input("email: "))
     senha = str(input("senha: "))
