@@ -18,17 +18,16 @@ def menuInicial():
     print("3- Sair do sistema")
 
 def produtoJaExiste(produto):
-    for i in produtoVetor:
 
-        if not produtoVetor:
+    if (not bool(produtoVetor)):
             return True
 
-        else:
-            if (produtoVetor[i]["nome"] == produto.nome):
-                return False
+    for i in produtoVetor:
+        if (produtoVetor[i]["nome"] == produto.nome):
+            return False
 
-            else:
-                return True
+        else:
+            return True
 
 
 def addProdutoAdmin():
@@ -43,17 +42,15 @@ def addProdutoAdmin():
     if(produtoJaExiste(produto)):   
         produtoVetor.append(produto)
         print(f"{produto.nome} adicionado com sucesso!")
-        sleep(2)
-        telaAdminLogado()
+        addProduto = str(input("Deseja adicionar mais produtos? (sim/nao) ")).lower()
+
+        addProdutoAdmin() if (addProduto == "sim") else telaAdminLogado()
 
     else:
         print(f"{produtoNome} ja existe!")
         acao = str(input("digite SAIR caso deseje sair, caso contrario pressione ENTER: ")).upper()
 
-        if(acao == "SAIR"):
-            telaAdminLogado()
-        else:
-            addProdutoAdmin()
+        telaAdminLogado() if (acao == "SAIR") else addProdutoAdmin()
 
 def popItemAdmin():
     print()
@@ -131,14 +128,14 @@ def loginAdmin():
         limparTela()
         print("email ou senha informados estão incorretos!")
         sleep(2)
-        acaoLogin = str(input("voce deseja sair? (sim/nao) ")).lower()
+        acaoLogin = str(input("voce deseja tentar novamente? (sim/nao) ")).lower()
         
-        if(acaoLogin == "sim"):
+        if(acaoLogin == "nao"):
             print("voce esta sendo redirecionado para o menu inicial")
             sleep(2)
             menuInicial()
 
-        elif(acaoLogin == "nao"):
+        elif(acaoLogin == "sim"):
             loginAdmin()
     
         else:
