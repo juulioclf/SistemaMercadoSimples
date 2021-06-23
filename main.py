@@ -1,8 +1,7 @@
 from helper import functions 
 from time import sleep
 
-
-acao = 11
+acao = 0
 while( acao != 3):
 
     functions.limparTela()

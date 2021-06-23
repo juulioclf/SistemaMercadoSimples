@@ -1,5 +1,9 @@
 import os
 from time import sleep
+from models import classes
+
+global produtoVetor
+produtoVetor = []
 
 def limparTela():
     os.system("CLS")
@@ -13,26 +17,90 @@ def menuInicial():
     print("2- Entar como user")
     print("3- Sair do sistema")
 
+def produtoJaExiste(produto):
+    for i in produtoVetor:
+
+        if not produtoVetor:
+            return True
+
+        else:
+            if (produtoVetor[i]["nome"] == produto.nome):
+                return False
+
+            else:
+                return True
+
+
+def addProdutoAdmin():
+
+    limparTela()
+    produtoCodigo = int(input("Digite o codigo do produto: "))
+    produtoNome = str(input("Digite o nome do produto: "))
+    produtoPreco = str(input("Digite o preco do produto: "))
+    
+    produto = classes.Produto(produtoCodigo, produtoNome, produtoPreco)
+
+    if(produtoJaExiste(produto)):   
+        produtoVetor.append(produto)
+        print(f"{produto.nome} adicionado com sucesso!")
+        sleep(2)
+        telaAdminLogado()
+
+    else:
+        print(f"{produtoNome} ja existe!")
+        acao = str(input("digite SAIR caso deseje sair, caso contrario pressione ENTER: ")).upper()
+
+        if(acao == "SAIR"):
+            telaAdminLogado()
+        else:
+            addProdutoAdmin()
+
+def popItemAdmin():
+    print()
+
+def addPromocaoAdmin():
+    print()
+
+def mostrarProdutos():
+    print(produtoVetor)
+    str(input("pressione ENTER para sair: "))   
+
+
 def telaAdminLogado():
 
     limparTela()
     print("Digite o que voce deseja fazer")
     print("1- Adicionar item")
     print("2- Remover item")
-    print("3- Adicionar promocao")
+    print("3- Mostrar itens e seus detalhes")
+    print("4- Adicionar promocao em um item")
+    print("5- Voltar ao menu inicial")
     acaoAdmin = int(input("Digite o que deseja fazer: "))
     
     if (acaoAdmin == 1):
-        print("voce esta adicionando itens")
+        limparTela()
+        print("redirecionando para a pagina de ADICIONAR itens")
         sleep(2)
+        addProdutoAdmin()
 
     elif (acaoAdmin == 2):
-        print("voce esta removendo itens")
+        print("redirecionando para a pagina de REMOVER itens")
         sleep(2)
     
     elif(acaoAdmin == 3):
-        print("voce esta adicionando uma promocao")
+        limparTela()
+        print("redirecionando para a pagina de MOSTRAR itens")
         sleep(2)
+        mostrarProdutos()
+    
+    elif(acaoAdmin == 4):
+        print("redirecionando para a pagina de ADICIONAR PROMOCAO itens")
+        sleep(2)
+
+    elif(acaoAdmin == 5):
+        print("voce esta sendo redirecionado para o menu inicial")
+        sleep(2)
+        menuInicial()
 
     else:
         print("digite um numero valido")
@@ -69,6 +137,7 @@ def loginAdmin():
             print("voce esta sendo redirecionado para o menu inicial")
             sleep(2)
             menuInicial()
+
         elif(acaoLogin == "nao"):
             loginAdmin()
     
