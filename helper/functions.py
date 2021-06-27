@@ -36,7 +36,8 @@ def inputVazio(*inputUser):
     for i in inputUser:
         if not i:
             print("por favor, digite uma entrada valida")
-            processoProdutoAdmin
+            
+    processoProdutoAdmin()
 
 
 
@@ -112,6 +113,7 @@ def telaAdminLogado():
         sleep(2)
 
     elif(acaoAdmin == 5):
+        limparTela()
         print("voce esta sendo redirecionado para o menu inicial")
         sleep(2)
         menuInicial()
