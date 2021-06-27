@@ -2,7 +2,6 @@ import os
 from time import sleep
 from models import classes
 
-global produtoVetor
 produtoVetor = []
 
 
@@ -14,46 +13,56 @@ def limparTela():
 def menuInicial():
 
     limparTela()
-    print("Seja bem-vindo ao sistema de mercado\n")
+    print("Seja bem-vindo ao sistema de mercado")
     print("1- Login como admin")
     print("2- Entar como user")
     print("3- Sair do sistema")
 
 
-def produtoJaExiste(produto):
+def produtoJaExiste(produtoNome):
+    
 
     if (not bool(produtoVetor)):
             return True
 
     for i in produtoVetor:
-        if (produtoVetor[i]["nome"] == produto.nome):
+        if i['nome'] == produtoNome:
             return False
 
         else:
             return True
 
+def inputVazio(*inputUser):
+    for i in inputUser:
+        if not i:
+            print("por favor, digite uma entrada valida")
+            processoProdutoAdmin
 
-def addProdutoAdmin():
+
+
+def addProdutoAdmin(**kwargs):
+    produtoVetor.append(kwargs)
+
+def processoProdutoAdmin():
 
     limparTela()
-    produtoCodigo = int(input("Digite o codigo do produto: "))
-    produtoNome = str(input("Digite o nome do produto: "))
-    produtoPreco = str(input("Digite o preco do produto: "))
+    produtoNome = input("Digite o nome do produto: ")
+    produtoPreco = input("Digite o preco do produto: ")
+    inputVazio(produtoNome)
     
-    produto = classes.Produto(produtoCodigo, produtoNome, produtoPreco)
+    if(produtoJaExiste(produtoNome)):   
 
-    if(produtoJaExiste(produto)):   
-        produtoVetor.append(produto)
-        print(f"{produto.nome} adicionado com sucesso!")
-        addProduto = str(input("Deseja adicionar mais produtos? (sim/nao) ")).lower()
+        addProdutoAdmin(nome = produtoNome, preco = produtoPreco)
+        print(f"{produtoNome} adicionado com sucesso!")
 
-        addProdutoAdmin() if (addProduto == "sim") else telaAdminLogado()
+        addProduto = input("Deseja adicionar mais produtos? (sim/nao) ").lower()
+        processoProdutoAdmin() if (addProduto == "sim") else telaAdminLogado()
 
     else:
         print(f"{produtoNome} ja existe!")
-        acao = str(input("digite SAIR caso deseje sair, caso contrario pressione ENTER: ")).upper()
+        acao = input("digite SAIR caso deseje sair, caso contrario pressione ENTER: ").upper()
 
-        telaAdminLogado() if (acao == "SAIR") else addProdutoAdmin()
+        telaAdminLogado() if (acao == "SAIR") else processoProdutoAdmin()
 
 
 def popItemAdmin():
@@ -68,7 +77,7 @@ def addPromocaoAdmin():
 def mostrarProdutos():
 
     print(produtoVetor)
-    str(input("pressione ENTER para sair: "))   
+    input("pressione ENTER para sair ")
 
 
 def telaAdminLogado():
@@ -86,7 +95,7 @@ def telaAdminLogado():
         limparTela()
         print("redirecionando para a pagina de ADICIONAR itens")
         sleep(2)
-        addProdutoAdmin()
+        processoProdutoAdmin()
 
     elif (acaoAdmin == 2):
         print("redirecionando para a pagina de REMOVER itens")
@@ -124,8 +133,8 @@ def loginAdmin():
 
     limparTela()
     print("por favor, digite o email e a senha:")
-    email = str(input("email: "))
-    senha = str(input("senha: "))
+    email = input("email: ")
+    senha = input("senha: ")
 
     if(verificaEmailAdmin(email, senha)):
         print("email e senha corretos!")
@@ -136,7 +145,7 @@ def loginAdmin():
         limparTela()
         print("email ou senha informados estão incorretos!")
         sleep(2)
-        acaoLogin = str(input("voce deseja tentar novamente? (sim/nao) ")).lower()
+        acaoLogin = input("voce deseja tentar novamente? (sim/nao) ").lower()
         
         if(acaoLogin == "nao"):
             print("voce esta sendo redirecionado para o menu inicial")
@@ -149,6 +158,8 @@ def loginAdmin():
         else:
             print("por favor, digite uma entrada valida")
             sleep (2)
+
+    
 
 
 

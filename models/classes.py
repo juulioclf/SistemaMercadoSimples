@@ -7,11 +7,30 @@ class Usuario():
         self.tipo = tipo
 """
 
-class Produto():
-    def __init__(self, codigo, nome, preco):
-        self.codigo = codigo
-        self.nome = nome
-        self.preco = preco
+class Produto:
+
+    
+
+    def __init__(self: object, nome: str, preco: int) -> None:
+        contador: int = 1000
+        self.__codigo = contador
+        self.__nome = nome
+        self.__preco = preco
+        contador += 1
+
+    @property
+    def codigo(self: object) -> int:
+        return self.__codigo
+
+    @property
+    def nome(self: object) -> str:
+        return self.__nome
+
+    @property
+    def preco(self: object) -> float:
+        return self.__preco
+
+
         
 
 
