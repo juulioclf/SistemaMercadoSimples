@@ -1,6 +1,5 @@
 import os
 from time import sleep
-from models import classes
 
 produtoVetor = []
 
@@ -36,6 +35,7 @@ def produtoJaExiste(produtoNome):
 def addProdutoAdmin(**kwargs):
     produtoVetor.append(kwargs)
 
+
 def processoProdutoAdmin():
 
     limparTela()
@@ -62,6 +62,7 @@ def popItemAdmin():
 
     print()
 
+
 def addPromocaoAdmin():
 
     print()
@@ -69,8 +70,10 @@ def addPromocaoAdmin():
 
 def mostrarProdutos():
 
-    print(produtoVetor)
+    for i in produtoVetor:
+        print(f"o produto {i['nome']}, está custando R${i['preco']}")
     input("pressione ENTER para sair ")
+    telaAdminLogado()
 
 
 def telaAdminLogado():
