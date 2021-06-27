@@ -28,3 +28,4 @@ log: implementada toda a doc
         -adicionar promocao
         -
 
+adicionar especificacao de entrada de dados em funcoes: 

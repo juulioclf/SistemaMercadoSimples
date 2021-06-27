@@ -32,14 +32,6 @@ def produtoJaExiste(produtoNome):
         else:
             return True
 
-def inputVazio(*inputUser):
-    for i in inputUser:
-        if not i:
-            print("por favor, digite uma entrada valida")
-            
-    processoProdutoAdmin()
-
-
 
 def addProdutoAdmin(**kwargs):
     produtoVetor.append(kwargs)
@@ -49,7 +41,7 @@ def processoProdutoAdmin():
     limparTela()
     produtoNome = input("Digite o nome do produto: ")
     produtoPreco = input("Digite o preco do produto: ")
-    inputVazio(produtoNome)
+
     
     if(produtoJaExiste(produtoNome)):   
 
