@@ -26,12 +26,14 @@ def estaVazio(vetor):
     
 
 def validaEntrada(*args):
+    
     for i in args:
         if i:
-            return True
+            auxiliar = True
         else:
-            return False
+            auxiliar = False
 
+    return auxiliar
 
 def produtoJaExiste(produtoNome):
     

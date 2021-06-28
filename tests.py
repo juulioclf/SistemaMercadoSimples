@@ -5,8 +5,16 @@ def addVetor(**kwargs):
 
 vetor1 = []
 
-if vetor1 == []:
-    print("tem elementos")
-else:
-    print("nao tem elementos")
+def validaEntrada(*args):
+    
+    for i in args:
+        if i == " ":
+            auxiliar = True
+        else:
+            auxiliar = False
+
+    return auxiliar
+
+a = input(" ")
+print(bool(a))
 

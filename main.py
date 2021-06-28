@@ -9,7 +9,7 @@ while True:
 
     if(acao == 1):
         print("indo para o login de admin..")
-        sleep(2)
+        sleep(0)
         functions.loginAdmin()
 
     elif(acao == 2):
