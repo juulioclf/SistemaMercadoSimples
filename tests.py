@@ -3,7 +3,10 @@ vetor = [{'nome' : "maca", 'preco' : "10"}, {'nome' : "uva", 'preco' : "10"}, {'
 def addVetor(**kwargs):
     vetor.append(kwargs)
 
-valor1 = "aaa"
+vetor1 = []
 
-dic1 = dict(chave = f'{valor1}')
-print(dic1)
+if vetor1 == []:
+    print("tem elementos")
+else:
+    print("nao tem elementos")
+

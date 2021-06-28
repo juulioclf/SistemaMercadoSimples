@@ -18,11 +18,25 @@ def menuInicial():
     print("3- Sair do sistema")
 
 
-def produtoJaExiste(produtoNome):
+def estaVazio(vetor):
+    if produtoVetor == []:
+        return True
+    else:
+        return False
     
 
-    if (not bool(produtoVetor)):
+def validaEntrada(*args):
+    for i in args:
+        if i:
             return True
+        else:
+            return False
+
+
+def produtoJaExiste(produtoNome):
+    
+    if estaVazio(produtoVetor):
+        return True
 
     for i in produtoVetor:
         if i['nome'] == produtoNome:
@@ -42,10 +56,17 @@ def processoProdutoAdmin():
     produtoNome = input("Digite o nome do produto: ")
     produtoPreco = input("Digite o preco do produto: ")
 
+    if validaEntrada(produtoNome, produtoPreco):
+        pass
+    else:
+        print("por favor, digite uma entrada valida")
+        sleep(2)
+        processoProdutoAdmin()
+    
     
     if(produtoJaExiste(produtoNome)):   
 
-        addProdutoAdmin(nome = produtoNome, preco = produtoPreco)
+        addProdutoAdmin(nome = produtoNome, preco = produtoPreco, promocao = False)
         print(f"{produtoNome} adicionado com sucesso!")
 
         addProduto = input("Deseja adicionar mais produtos? (sim/nao) ").lower()
